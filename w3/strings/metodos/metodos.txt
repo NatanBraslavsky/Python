@@ -1,0 +1,45 @@
+capitalize(): Converte o primeiro caractere para maiúsculo.
+casefold(): Converte a string para minúsculas (mais agressiva que o lower()).
+center(): Retorna uma string centralizada dentro de um tamanho especificado.
+count(): Retorna o número de vezes que um valor especificado ocorre na string.
+encode(): Retorna uma versão codificada da string.
+endswith(): Retorna True se a string terminar com o valor especificado.
+expandtabs(): Define o tamanho das tabulações na string.
+find(): Busca um valor especificado na string e retorna a posição de onde foi encontrado.
+format(): Formata valores especificados em uma string.
+format_map(): Formata valores especificados em uma string usando um dicionário ou mapeamento.
+index(): Busca um valor especificado na string e retorna a posição de onde foi encontrado (gera erro se não encontrar).
+isalnum(): Retorna True se todos os caracteres na string forem alfanuméricos.
+isalpha(): Retorna True se todos os caracteres na string forem alfabéticos.
+isascii(): Retorna True se todos os caracteres na string forem caracteres ASCII.
+isdecimal(): Retorna True se todos os caracteres na string forem decimais.
+isdigit(): Retorna True se todos os caracteres na string forem dígitos.
+isidentifier(): Retorna True se a string for um identificador válido.
+islower(): Retorna True se todos os caracteres na string forem minúsculos.
+isnumeric(): Retorna True se todos os caracteres na string forem numéricos.
+isprintable(): Retorna True se todos os caracteres na string forem imprimíveis.
+isspace(): Retorna True se todos os caracteres na string forem espaços em branco.
+istitle(): Retorna True se a string seguir as regras de um título (primeira letra de cada palavra maiúscula).
+isupper(): Retorna True se todos os caracteres na string forem maiúsculos.
+join(): Junta os elementos de um iterável no final da string.
+ljust(): Retorna uma versão da string justificada à esquerda.
+lower(): Converte a string para minúsculas.
+lstrip(): Retorna uma versão da string com os espaços à esquerda removidos.
+maketrans(): Retorna uma tabela de tradução que pode ser usada para realizar traduções de caracteres.
+partition(): Retorna uma tupla onde a string é dividida em três partes.
+replace(): Retorna uma string onde um valor especificado é substituído por outro.
+rfind(): Busca um valor especificado na string e retorna a última posição onde foi encontrado.
+rindex(): Busca um valor especificado na string e retorna a última posição onde foi encontrado (gera erro se não encontrar).
+rjust(): Retorna uma versão da string justificada à direita.
+rpartition(): Retorna uma tupla onde a string é dividida em três partes (a partir do final).
+rsplit(): Divide a string em uma lista a partir de um separador especificado, a partir do final.
+rstrip(): Retorna uma versão da string com os espaços à direita removidos.
+split(): Divide a string em uma lista a partir de um separador especificado.
+splitlines(): Divide a string em uma lista no ponto onde há quebras de linha.
+startswith(): Retorna True se a string começar com o valor especificado.
+strip(): Retorna uma versão da string com espaços em branco removidos de ambos os lados.
+swapcase(): Troca os casos de maiúsculas e minúsculas (minúsculas viram maiúsculas e vice-versa).
+title(): Converte a primeira letra de cada palavra para maiúscula.
+translate(): Retorna uma string traduzida usando uma tabela de tradução.
+upper(): Converte a string para maiúsculas.
+zfill(): Preenche a string com um número especificado de zeros no início.

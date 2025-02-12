@@ -1,0 +1,11 @@
+append() - Adiciona um elemento ao final da lista
+clear() - Remove todos os elementos da lista
+copy() - Retorna uma cópia da lista
+count() - Retorna o número de ocorrências de um valor especificado
+extend() - Adiciona os elementos de uma lista (ou qualquer iterável) ao final da lista atual
+index() - Retorna o índice do primeiro elemento com o valor especificado
+insert() - Adiciona um elemento em uma posição específica
+pop() - Remove o elemento em uma posição específica
+remove() - Remove o item com o valor especificado
+reverse() - Inverte a ordem dos elementos da lista
+sort() - Ordena a lista

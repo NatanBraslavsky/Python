@@ -9,3 +9,15 @@ lista.append(10)#adicionei no final
 lista.pop()#deletei o final
 
 print(lista)
+
+
+##testes
+a = 0.1
+b = 0.7
+c = round(a + b, 1)
+print(c)
+
+frase = 'olha so, que coisa interessante'
+arrayFrase = frase.split(",")
+for i in range(len(arrayFrase)):
+    print(f"{arrayFrase[i].strip()}")

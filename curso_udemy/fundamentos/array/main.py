@@ -27,3 +27,11 @@ for i in range(len(arrayFrase)):
 lista = ['mamao', 'banana', 'pera']
 f1, f2, *_ = lista #'*' é o resto da lista 
 print(f1,f2, _)
+
+p, *_, u = lista
+print(p, u)
+
+if lista == 'mamao':
+    print(lista)
+else:
+    print(lista) 

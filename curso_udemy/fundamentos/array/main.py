@@ -21,3 +21,9 @@ frase = 'olha so, que coisa interessante'
 arrayFrase = frase.split(",")
 for i in range(len(arrayFrase)):
     print(f"{arrayFrase[i].strip()}")
+
+
+##testes
+lista = ['mamao', 'banana', 'pera']
+f1, f2, *_ = lista #'*' é o resto da lista 
+print(f1,f2, _)

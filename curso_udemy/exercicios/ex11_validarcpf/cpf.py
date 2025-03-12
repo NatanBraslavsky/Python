@@ -6,9 +6,9 @@ multiplicando cada um dos valores por uma
 contagem regressiva começando de 10
 
 Ex.:  746.824.890-70 (746824890)
-   10  9  8  7  6  5  4  3  2
-   7   4  6  8  2  4  8  9  0
-   70  36 48 56 12 20 32 27 0
+10  9  8  7  6  5  4  3  2
+7   4  6  8  2  4  8  9  0
+70  36 48 56 12 20 32 27 0
 
 Somar todos os resultados: 
 70+36+48+56+12+20+32+27+0 = 301
@@ -30,8 +30,7 @@ while True:
     tamanho_cpf = len(input_cpf)
     try:
         if tamanho_cpf == 11:
-            cpf = int(input_cpf)
-            cpf_array = str(cpf)
+            cpf_array = str(input_cpf)
             for i in range(tamanho_cpf - 2):
                 multiplicacao = int(cpf_array[i]) * (10 - i)
                 vetor_multiplicacao_novedigitos.append(multiplicacao)
@@ -44,9 +43,11 @@ while True:
         print("ERRO.")
 soma_vetor_multiplicado *= 10
 soma_vetor_multiplicado %= 11
-if soma_vetor_multiplicado > 9:
-    print(0)
+primeiro_digito = 0 if soma_vetor_multiplicado >= 10 else soma_vetor_multiplicado
+print(f"Primeiro dígito = {primeiro_digito}")
+if primeiro_digito == int(cpf_array[9]):
+    print("CPF Válido.")
 else:
-    print(soma_vetor_multiplicado)
+    print("CPF Não existe.")
 
 

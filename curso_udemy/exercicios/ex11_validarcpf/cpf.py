@@ -32,7 +32,6 @@ while True:
         if tamanho_cpf == 11:
             cpf = int(input_cpf)
             cpf_array = str(cpf)
-            # print(cpf, tamanho_cpf)
             for i in range(tamanho_cpf - 2):
                 multiplicacao = int(cpf_array[i]) * (10 - i)
                 vetor_multiplicacao_novedigitos.append(multiplicacao)
@@ -43,7 +42,11 @@ while True:
             print("CPF inválido.")
     except:
         print("ERRO.")
-print(soma_vetor_multiplicado)
+soma_vetor_multiplicado *= 10
+soma_vetor_multiplicado %= 11
+if soma_vetor_multiplicado > 9:
+    print(0)
+else:
+    print(soma_vetor_multiplicado)
 
-#74
 

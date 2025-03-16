@@ -53,54 +53,42 @@ O segundo dígito do CPF é 0
 """
     
 
-vetor_multiplicacao_novedigitos = []
-vetor_mult_segundo_digito = []
-soma_vetor_multiplicado = 0
-soma_vetor_segundo_digito = 0
+from random import randint
 
 while True:
     cpf_gerado = []
-    for i in range(11):
+    for i in range(9):
         cpf_gerado.append(str(randint(0,9)))
-
-    tamanho_cpf = len(cpf_gerado)
-
-    try: 
-        for i in range(9):  
-            multiplicacao = int(cpf_gerado[i]) * (10 - i)
-            vetor_multiplicacao_novedigitos.append(multiplicacao)
-
-        soma_vetor_multiplicado = sum(vetor_multiplicacao_novedigitos)
-        soma_vetor_multiplicado *= 10
-        soma_vetor_multiplicado %= 11
-        primeiro_digito = 0 if soma_vetor_multiplicado >= 10 else soma_vetor_multiplicado
-
-        for i in range(9):
-            multiplicacao_segundo_digito = int(cpf_gerado[i]) * (11 - i)
-            vetor_mult_segundo_digito.append(multiplicacao_segundo_digito)
-
-        multiplicacao_segundo_digito_primeiro = int(cpf_gerado[9]) * 2
-        vetor_mult_segundo_digito.append(multiplicacao_segundo_digito_primeiro)
-
-        soma_vetor_segundo_digito = sum(vetor_mult_segundo_digito)
-        soma_vetor_segundo_digito *= 10
-        soma_vetor_segundo_digito %= 11
-        segundo_digito = 0 if soma_vetor_segundo_digito >= 10 else soma_vetor_segundo_digito
-
-        
-
-        if primeiro_digito == int(cpf_gerado[9]) and segundo_digito == int(cpf_gerado[10]):
-            print("CPF Válido.")
-            cpf_formatado = '{}.{}.{}-{}'.format(
-                ''.join(cpf_gerado[:3]),   
-                ''.join(cpf_gerado[3:6]),   
-                ''.join(cpf_gerado[6:9]),
-                ''.join(cpf_gerado[9:])     
-            )
-            print(cpf_formatado)
-            break
-
-    except:
-        print("ERRO ao processar o CPF.")
-        break
+    
+    vetor_multiplicacao_novedigitos = []
+    for i in range(9):  
+        multiplicacao = int(cpf_gerado[i]) * (10 - i)
+        vetor_multiplicacao_novedigitos.append(multiplicacao)
+    
+    soma_vetor_multiplicado = sum(vetor_multiplicacao_novedigitos)
+    soma_vetor_multiplicado *= 10
+    soma_vetor_multiplicado %= 11
+    primeiro_digito = 0 if soma_vetor_multiplicado >= 10 else soma_vetor_multiplicado
+    cpf_gerado.append(str(primeiro_digito))
+    
+    vetor_mult_segundo_digito = []
+    for i in range(10):
+        multiplicacao_segundo_digito = int(cpf_gerado[i]) * (11 - i)
+        vetor_mult_segundo_digito.append(multiplicacao_segundo_digito)
+    
+    soma_vetor_segundo_digito = sum(vetor_mult_segundo_digito)
+    soma_vetor_segundo_digito *= 10
+    soma_vetor_segundo_digito %= 11
+    segundo_digito = 0 if soma_vetor_segundo_digito >= 10 else soma_vetor_segundo_digito
+    cpf_gerado.append(str(segundo_digito))
+    
+    cpf_formatado = '{}.{}.{}-{}'.format(
+        ''.join(cpf_gerado[:3]),
+        ''.join(cpf_gerado[3:6]),
+        ''.join(cpf_gerado[6:9]),
+        ''.join(cpf_gerado[9:])
+    )
+    
+    print("CPF Gerado Válido:", cpf_formatado)
+    break
 

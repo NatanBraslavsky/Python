@@ -52,40 +52,49 @@ O segundo dígito do CPF é 0
 """
 
 vetor_multiplicacao_novedigitos = []
-soma_vetor_multiplicado = 0
 vetor_mult_segundo_digito = []
+soma_vetor_multiplicado = 0
 soma_vetor_segundo_digito = 0
+
 while True:
-    input_cpf = input("Digite o cpf: ").replace(".", "").replace("-", "")
+    input_cpf = input("Digite o CPF: ").replace(".", "").replace("-", "")
     tamanho_cpf = len(input_cpf)
+
     try:
-        if tamanho_cpf == 11:
+        if tamanho_cpf == 11:  
             cpf_array = str(input_cpf)
-            for i in range(tamanho_cpf - 2):
+
+            for i in range(9):  
                 multiplicacao = int(cpf_array[i]) * (10 - i)
                 vetor_multiplicacao_novedigitos.append(multiplicacao)
-            for i in range(len(vetor_multiplicacao_novedigitos)):
-                soma_vetor_multiplicado += vetor_multiplicacao_novedigitos[i]
-            for i in range(10):
+
+            soma_vetor_multiplicado = sum(vetor_multiplicacao_novedigitos)
+            soma_vetor_multiplicado *= 10
+            soma_vetor_multiplicado %= 11
+            primeiro_digito = 0 if soma_vetor_multiplicado >= 10 else soma_vetor_multiplicado
+
+            for i in range(9):
                 multiplicacao_segundo_digito = int(cpf_array[i]) * (11 - i)
                 vetor_mult_segundo_digito.append(multiplicacao_segundo_digito)
-            for i in range(len(vetor_mult_segundo_digito)):
-                soma_vetor_segundo_digito += vetor_mult_segundo_digito[i]
+
+            multiplicacao_segundo_digito_primeiro = int(cpf_array[9]) * 2
+            vetor_mult_segundo_digito.append(multiplicacao_segundo_digito_primeiro)
+
+            soma_vetor_segundo_digito = sum(vetor_mult_segundo_digito)
+            soma_vetor_segundo_digito *= 10
+            soma_vetor_segundo_digito %= 11
+            segundo_digito = 0 if soma_vetor_segundo_digito >= 10 else soma_vetor_segundo_digito
+
+            print(f"Primeiro dígito = {primeiro_digito}")
+            print(f"Segundo dígito = {segundo_digito}")
+
+            if primeiro_digito == int(cpf_array[9]) and segundo_digito == int(cpf_array[10]):
+                print("CPF Válido.")
+            else:
+                print("CPF Inválido.")
             break
         else:
-            print("CPF inválido.")
+            print("CPF inválido. Digite um CPF com 11 dígitos.")
     except:
-        print("ERRO.")
-soma_vetor_multiplicado *= 10
-soma_vetor_multiplicado %= 11
-primeiro_digito = 0 if soma_vetor_multiplicado >= 10 else soma_vetor_multiplicado
-soma_vetor_segundo_digito *= 10
-soma_vetor_segundo_digito %= 11
-segundo_digito = 0 if soma_vetor_segundo_digito > 9 else soma_vetor_segundo_digito
-print(f"Primeiro dígito = {primeiro_digito}")
-if primeiro_digito == int(cpf_array[9]):
-    print("CPF Válido.")
-else:
-    print("CPF Não existe.")
+        print("ERRO ao processar o CPF.")
 
-print(vetor_mult_segundo_digito)

@@ -25,6 +25,9 @@ for pergunta in perguntas:
         print(f'{i})', opcoes)
     print()
     escolha = input("Escolha uma opção: ")
-            
-    
+    escolha_int = int(escolha)
+    if pergunta['Opções'][escolha_int] == pergunta['Resposta']:
+        print('acertou')
+    else:
+        print('Errou')
     print()

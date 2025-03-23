@@ -187,6 +187,6 @@
 
 #!15
 def qtdDigitos(num):
-    print(len(num))
+    print(len(str(num)))
 
-qtdDigitos("545")
+qtdDigitos(545)

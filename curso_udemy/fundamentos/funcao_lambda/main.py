@@ -1,6 +1,4 @@
 
-
-
 lista = [
     {'nome': 'Luiz', 'sobrenome': 'miranda'},
     {'nome': 'Maria', 'sobrenome': 'Oliveira'},
@@ -34,6 +32,9 @@ lista = [
 
 soma = lambda x, y : x+y
 print(soma(2,3))
+
+
+
 
 
 

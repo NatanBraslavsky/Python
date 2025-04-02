@@ -102,11 +102,15 @@ tk.geometry('300x300')
 def infoLista():
     numeros = nums_entry.get().split(",")
     numeros = [int(num) for num in numeros]
-    qtdNove = numeros.count(9)
-    valorTres = numeros.index(3)
-    pares = [i for i in numeros if i % 2 == 0]
-    resp_label.config(text = f'Quantidade nove: {qtdNove}\nPrimeiro valor 3 no index: {valorTres}\nPares: {pares}')
     
+    qtdNove = numeros.count(9)
+    
+    valorTres = numeros.index(3)
+    
+    pares = [i for i in numeros if i % 2 == 0]
+    
+    resp_label.config(text = f'Quantidade nove: {qtdNove}\nPrimeiro valor 3 no index: {valorTres}\nPares: {pares}')
+    0
 nums_entry = Entry(tk)
 nums_entry.pack()
 

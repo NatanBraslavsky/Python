@@ -99,25 +99,31 @@ tk.geometry('300x300')
 
 #? 05
 
-def infoLista():
-    numeros = nums_entry.get().split(",")
-    numeros = [int(num) for num in numeros]
+# def infoLista():
+#     numeros = nums_entry.get().split(",")
+#     numeros = [int(num) for num in numeros]
     
-    qtdNove = numeros.count(9)
+#     qtdNove = numeros.count(9)
     
-    valorTres = numeros.index(3)
+#     valorTres = numeros.index(3)
     
-    pares = [i for i in numeros if i % 2 == 0]
+#     pares = [i for i in numeros if i % 2 == 0]
     
-    resp_label.config(text = f'Quantidade nove: {qtdNove}\nPrimeiro valor 3 no index: {valorTres}\nPares: {pares}')
-    0
-nums_entry = Entry(tk)
-nums_entry.pack()
+#     resp_label.config(text = f'Quantidade nove: {qtdNove}\nPrimeiro valor 3 no index: {valorTres}\nPares: {pares}')
+#     0
+# nums_entry = Entry(tk)
+# nums_entry.pack()
 
-btn = Button(tk, text='Clique', command=infoLista)
-btn.pack()
+# btn = Button(tk, text='Clique', command=infoLista)
+# btn.pack()
 
-resp_label = Label(tk)
-resp_label.pack()
+# resp_label = Label(tk)
+# resp_label.pack()
+
+#? 06
+
+print('ola mundo')
+for i in range(3):
+    print(i)
 
 tk.mainloop()

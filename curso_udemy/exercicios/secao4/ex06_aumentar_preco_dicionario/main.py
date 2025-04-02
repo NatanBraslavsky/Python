@@ -1,3 +1,5 @@
+import copy
+
 produtos = [
      {'nome': 'Produto 5', 'preco': 10.00},
      {'nome': 'Produto 1', 'preco': 22.32},
@@ -13,3 +15,8 @@ newProduto = [
 for i in newProduto:
     for chave,valor in i.items():
         print(chave, valor)
+        
+porqueeuquis = copy.deepcopy(produtos)
+print(porqueeuquis)
+
+

@@ -1,22 +1,31 @@
 import copy
 
-produtos = [
-     {'nome': 'Produto 5', 'preco': 10.00},
-     {'nome': 'Produto 1', 'preco': 22.32},
-     {'nome': 'Produto 3', 'preco': 10.11},
-     {'nome': 'Produto 2', 'preco': 105.87},
-     {'nome': 'Produto 4', 'preco': 69.90},
- ]
+from packageProdutos import produtos
 
-newProduto = [
-    {**produto, 'preco':produto['preco']*1.10} for  produto in produtos
+#?aumentar o preco em 10%
+novoProduto = [
+    {**p, 'preco':round(p['preco']*1.1,2)} for p in copy.deepcopy(produtos)
 ]
 
-for i in newProduto:
-    for chave,valor in i.items():
-        print(chave, valor)
-        
-porqueeuquis = copy.deepcopy(produtos)
-print(porqueeuquis)
+print(*novoProduto, sep='\n')
 
 
+#?ordenado por nome decrescente
+print('\n')
+produto_ordenado_por_nome = sorted(
+    copy.deepcopy(produtos),
+    key=lambda p:p['nome'],
+    reverse=True
+    )
+
+print(*produto_ordenado_por_nome, sep='\n')
+
+
+#?ordenado por preco
+print('\n')
+produto_ordenado_por_preco = sorted(
+    copy.deepcopy(produtos),
+    key=lambda p : p['preco']
+)
+
+print(*produto_ordenado_por_preco, sep='\n')

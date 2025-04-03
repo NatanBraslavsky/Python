@@ -8,14 +8,16 @@ produtos = {'feijao':56,
 def inserirExibir():
     nome = nome_entry.get()
     if nome in produtos:
-        result_label.config(text=produtos.values())
-    if nome == 'sair':
+        result_label.config(text=produtos[nome])
+    elif nome == 'sair':
         tk.destroy()
     else:
         def adicionarProduto():
             preco = float(preco_entry.get())
             produtos[nome] = preco
             result_label.config(text='Cadastrado.')
+            preco_entry.destroy()
+            preco_btn.destroy()
             
         preco_entry = Entry(tk)
         preco_entry.grid(row=3,column=0)

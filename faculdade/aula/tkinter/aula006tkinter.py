@@ -81,70 +81,70 @@ r_Label.grid(row=3,column=0,columnspan=2)
 
 #Checkbutton() - seleção multipla -------------------------------------------
 '''
-# def mostrar_selecionados():
-#     selecionados = []
-#     if futebol_var.get():
-#         selecionados.append('Futebol')
-#     if volei_var.get():
-#         selecionados.append('Volei')
-#     if natacao_var.get():
-#         selecionados.append('Natação')
-#     if tenis_var.get():
-#         selecionados.append('Tênis')
-#     if basquete_var.get():
-#         selecionados.append('Basquete')
-#     if surf_var.get():
-#         selecionados.append('Surf')
+def mostrar_selecionados():
+    selecionados = []
+    if futebol_var.get():
+        selecionados.append('Futebol')
+    if volei_var.get():
+        selecionados.append('Volei')
+    if natacao_var.get():
+        selecionados.append('Natação')
+    if tenis_var.get():
+        selecionados.append('Tênis')
+    if basquete_var.get():
+        selecionados.append('Basquete')
+    if surf_var.get():
+        selecionados.append('Surf')
 
-#     r_label.config(text='Esporte(s) selecionado(s): '+' ☻ '.join(selecionados))
+    r_label.config(text='Esporte(s) selecionado(s): '+' ☻ '.join(selecionados))
 
-# futebol_var = IntVar()
-# volei_var = IntVar()
-# natacao_var = IntVar()
-# tenis_var = IntVar()
-# basquete_var = IntVar()
-# surf_var = IntVar()
+futebol_var = IntVar()
+volei_var = IntVar()
+natacao_var = IntVar()
+tenis_var = IntVar()
+basquete_var = IntVar()
+surf_var = IntVar()
 
-# t = Label(tk,text='Qual o seu esporte favorito',bg='#CECECE')
-# a1 = Checkbutton(tk,text='Futebol',bg='#CECECE',variable=futebol_var)
-# a2 = Checkbutton(tk,text='Volei',bg='#CECECE',variable=volei_var)
-# a3 = Checkbutton(tk,text='Natação',bg='#CECECE',variable=natacao_var)
-# a4 = Checkbutton(tk,text='Tenis',bg='#CECECE',variable=tenis_var)
-# a5 = Checkbutton(tk,text='Basquete',bg='#CECECE',variable=basquete_var)
-# a6 = Checkbutton(tk,text='Surf',bg='#CECECE',variable=surf_var)
+t = Label(tk,text='Qual o seu esporte favorito',bg='#CECECE')
+a1 = Checkbutton(tk,text='Futebol',bg='#CECECE',variable=futebol_var)
+a2 = Checkbutton(tk,text='Volei',bg='#CECECE',variable=volei_var)
+a3 = Checkbutton(tk,text='Natação',bg='#CECECE',variable=natacao_var)
+a4 = Checkbutton(tk,text='Tenis',bg='#CECECE',variable=tenis_var)
+a5 = Checkbutton(tk,text='Basquete',bg='#CECECE',variable=basquete_var)
+a6 = Checkbutton(tk,text='Surf',bg='#CECECE',variable=surf_var)
 
-# t.place(x=10,y=10)
-# a1.place(x=10,y=40)
-# a2.place(x=90,y=40)
-# a3.place(x=160,y=40)
-# a4.place(x=250,y=40)
-# a5.place(x=320,y=40)
-# a6.place(x=400,y=40)
+t.place(x=10,y=10)
+a1.place(x=10,y=40)
+a2.place(x=90,y=40)
+a3.place(x=160,y=40)
+a4.place(x=250,y=40)
+a5.place(x=320,y=40)
+a6.place(x=400,y=40)
 
-# btn = Button(tk,text='Clique aqui',command=mostrar_selecionados)
-# btn.place(x=10,y=70)
+btn = Button(tk,text='Clique aqui',command=mostrar_selecionados)
+btn.place(x=10,y=70)
 
-# r_label = Label(tk,text='Esportes selecionados: Nenhum',bg='#CECECE')
-# r_label.place(x=10,y=100)
+r_label = Label(tk,text='Esportes selecionados: Nenhum',bg='#CECECE')
+r_label.place(x=10,y=100)
 
 #Radiobutton() - seleção simples ----------------------------------------
 
-def verificar():
-    resp_label.config(text=valor.get())
+# def verificar():
+#     resp_label.config(text=valor.get())
 
-valor = IntVar()
+# valor = IntVar()
 
-r1 = Radiobutton(tk,text='Opção 1',variable=valor,value=1,bg='#CECECE')
-r2 = Radiobutton(tk,text='Opção 2',variable=valor,value=2,bg='#CECECE')
-r3 = Radiobutton(tk,text='Opção 3',variable=valor,value=3,bg='#CECECE')
-btn = Button(tk,text='verificar', command=verificar)
-btn.place(x=300,y=10)
-resp_label = Label(tk)
-resp_label.place(x = 400, y = 10)
+# r1 = Radiobutton(tk,text='Opção 1',variable=valor,value=1,bg='#CECECE')
+# r2 = Radiobutton(tk,text='Opção 2',variable=valor,value=2,bg='#CECECE')
+# r3 = Radiobutton(tk,text='Opção 3',variable=valor,value=3,bg='#CECECE')
+# btn = Button(tk,text='verificar', command=verificar)
+# btn.place(x=300,y=10)
+# resp_label = Label(tk)
+# resp_label.place(x = 400, y = 10)
 
-r1.place(x=10,y=10)
-r2.place(x=100,y=10)
-r3.place(x=200,y=10)
+# r1.place(x=10,y=10)
+# r2.place(x=100,y=10)
+# r3.place(x=200,y=10)
 
 #Listbox() - cria uma lista --------------------------------------------
 

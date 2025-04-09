@@ -155,7 +155,41 @@ tk.title('Rev 1')
 
 #?mesma questao 2 tentativa pra treino
 
+# def valorTotal():
+#     try:
+#         valor = float(valor_entry.get())
+#         desc = desconto.get()
+#         if desc == 10:
+#             valorTot = valor * 1.1
+#         elif desc == 15:
+#             valorTot = valor * 1.15
+#         elif desc == 20:
+#             valorTot = valor * 1.2
+#         else:
+#             valorTot = valor
+#         resp_label.config(text=f'Valor Total a pagar R${round(valorTot,2)}')
+#     except:
+#         resp_label.config(text='Erro.')
 
+# valor_entry = Entry(tk)
+# valor_entry.place(x=10,y=10)
+
+# desconto = IntVar()
+
+# desc10 = Radiobutton(tk, text='10%', variable=desconto, value=10)
+# desc10.place(x=100,y=10)
+
+# desc15 = Radiobutton(tk, text='15%', variable=desconto,value=15)
+# desc15.place(x=200,y=10)
+
+# desc20 = Radiobutton(tk,text='20%',variable=desconto,value=20)
+# desc20.place(x=300,y=10)
+
+# btn = Button(tk,text='Verificar', command=valorTotal)
+# btn.place(x=400,y=10)
+
+# resp_label = Label(tk)
+# resp_label.place(x=10,y=100)
 
 
 

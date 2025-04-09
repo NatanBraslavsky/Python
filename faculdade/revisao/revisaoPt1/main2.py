@@ -86,10 +86,77 @@ tk.title('Rev 1')
 # resp_label = Label(tk)
 # resp_label.pack()
 
+#?5
+# def mostrarInfo():
+#     lista = num_entry.get().split(',')
+#     nums = [int(n) for n in lista]
+#     qtdNove = nums.count(9)
+#     try:
+#         pos = nums.index(3)
+#     except:
+#         pos = -1
+#     pares = [x for x in nums if x % 2 == 0]
+#     resp_label.config(text=
+#                       f'Qtd nove: {qtdNove}\n'+
+#                       f'Index primeiro tres: {pos}\n'+
+#                       f'pares: {pares}'
+#                       )
 
-def mostrarInfo():
-    lista = num_entry.get().split(',')
-    nums = [int(n) for n in lista]
+# num_entry = Entry(tk)
+# num_entry.pack()
+
+# btn = Button(tk, text='clique', command=mostrarInfo)
+# btn.pack()
+
+# resp_label = Label(tk)
+# resp_label.pack()
+
+
+
+#? prova. questao gorjeta
+
+# def desconto():
+#     try:
+#         valor = float(valor_entry.get())
+#         intvar = intvarValores.get()
+#         if intvar == 10:
+#             valorTotal = valor * 1.10
+#         elif intvar == 15:
+#             valorTotal = valor * 1.15
+#         elif intvar == 20:
+#             valorTotal = valor * 1.2
+#         else:
+#             valorTotal = valor
+#         resp_label.config(text=f'Valor total: R${round(valorTotal,2)}')
+#     except:
+#         resp_label.config(text='Erro')
     
+
+# valor_entry = Entry(tk)
+# valor_entry.place(x=1,y=1)
+
+# intvarValores = IntVar()
+
+# btnDez = Radiobutton(tk, text='10%', variable=intvarValores, value=10)
+# btnDez.pack()
+
+# btnQuin = Radiobutton(tk, text='15%', variable=intvarValores, value=15)
+# btnQuin.pack()
+
+# btnVin = Radiobutton(tk, text='20%',variable=intvarValores, value=20)
+# btnVin.pack()
+
+# btn = Button(tk, text='Verificar', command=desconto)
+# btn.pack()
+
+# resp_label = Label(tk)
+# resp_label.pack()
+
+
+#?mesma questao 2 tentativa pra treino
+
+
+
+
 
 tk.mainloop()

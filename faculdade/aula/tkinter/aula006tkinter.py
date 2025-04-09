@@ -156,7 +156,4 @@ for e in estado:
     lista.insert(END,e)
 
 
-
-
-
 tk.mainloop()

@@ -35,12 +35,10 @@ caminho += "arquivo.txt"
 
 arquivo = open(caminho, 'w')
 arquivo.write("Teste 1\n")
+arquivo.write("Testeção 2\n")
 arquivo.write("Teste 2\n")
 arquivo.close()
 
-arquivo = open(caminho, 'r')
-for n, _ in enumerate(infile)
-arquivo.close()
-arquivo.
 
-print(a)
+arquivo.close()
+

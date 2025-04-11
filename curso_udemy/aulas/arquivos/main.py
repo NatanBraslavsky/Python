@@ -31,14 +31,11 @@
     
 
 caminho = "C:\\Users\\natan\\OneDrive\\Documentos\\Estudos\\Python\\curso_udemy\\aulas\\arquivos\\"
-caminho += "arquivo.txt"
+caminho+= "arquivo.txt"
 
-arquivo = open(caminho, 'w')
-arquivo.write("Teste 1\n")
-arquivo.write("Testeção 2\n")
-arquivo.write("Teste 2\n")
-arquivo.close()
+with open(caminho, 'w+', encoding='utf-8') as arquivo:
+    arquivo.write("OlÃ¡ mundo.")
+    arquivo.seek(0,0)
+    print(arquivo.read())
 
-
-arquivo.close()
 

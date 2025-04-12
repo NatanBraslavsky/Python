@@ -31,3 +31,4 @@ def exit_programa():
     print("Encerrando programa...")
     sleep(0.3)
     exit()
+

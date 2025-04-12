@@ -1,5 +1,13 @@
 from time import sleep
 import escolhas
+import json
+
+caminho_arquivo = "C:\\Users\natan\\OneDrive\\Documentos\\Estudos\\python\\curso_udemy\\exercicios\\secao4\\ex10_lista_tarefa\\db.json"
+def ler(tarefas, caminho):
+    dados = []
+    try:
+        with open(caminho, 'r', encoding='utf8') as arquivo:
+            dados = json.load(arquivo)
 
 removido = []
 tarefas = []

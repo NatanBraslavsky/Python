@@ -12,9 +12,9 @@
 # print(numero, lista, sep='\n')
 
 
-x = 1
-y = 1
-while x < 100:
-    x,y = y, y+x
-    if x % 3 == 0:
-        print(x)
+# x = 1
+# y = 1
+# while x < 100:
+#     x,y = y, y+x
+#     if x % 3 == 0:
+#         print(x)

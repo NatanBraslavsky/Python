@@ -1,16 +1,28 @@
 from time import sleep
 import escolhas
 import json
+import os
 
-caminho_arquivo = "C:\\Users\natan\\OneDrive\\Documentos\\Estudos\\python\\curso_udemy\\exercicios\\secao4\\ex10_lista_tarefa\\db.json"
+
 def ler(tarefas, caminho):
     dados = []
     try:
         with open(caminho, 'r', encoding='utf8') as arquivo:
             dados = json.load(arquivo)
+    except:
+        print("Arquivo não existe.")
+        salvar(tarefas,caminho)
+    return dados
 
+def salvar(tarefas, caminho):
+    dados = tarefas
+    with open(caminho, 'w', encoding='utf-8') as arquivo:
+        dados = json.dump(tarefas, arquivo, indent=2, ensure_ascii=False)
+    return dados
+
+caminho_arquivo = "C:\\Users\\natan\\OneDrive\\Documentos\\Estudos\\python\\curso_udemy\\exercicios\\secao4\\ex10_lista_tarefa\\db.json"
 removido = []
-tarefas = []
+tarefas = ler([], caminho_arquivo)
 
 while True:
     try:
@@ -36,6 +48,7 @@ while True:
             comando[escolha]()
         else:
             print("\n\033[31mDigite uma opção válida.\033[0m")
+        salvar(tarefas, caminho_arquivo)
 
-    except Exception as e:
+    except:
         print("\033[31mErro de digitação, digite conforme o programa solicita.\033[0m")

@@ -32,16 +32,27 @@ cursor.execute(
 connection.commit()
 
 
-#*Registrar valores nas colunas da tabela
+#?CREATE
 sql = (
     f'INSERT INTO {TABLE_NAME} (name, weight) VALUES (:name, :weight)'
 )
-# cursor.execute(sql, ['Joana', 4])#?anti sql injection
-#cursor.executemany(sql, [['Felipe', 8], ['Luiz', 5]])#?adiciona varios
-# cursor.execute(sql, {'name': 'Silveira', 'weight': 7.5})#?com dicionario
-cursor.executemany(sql, ({'name': 'Silveira', 'weight': 7.5}, {'name' : 'Felipe Rangel', 'weight' : 85.3}))#?com varios dicionarios
+# cursor.execute(sql, ['Joana', 4])#*anti sql injection
+#cursor.executemany(sql, [['Felipe', 8], ['Luiz', 5]])#*adiciona varios
+# cursor.execute(sql, {'name': 'Silveira', 'weight': 7.5})#*com dicionario
+cursor.executemany(sql, ({'name': 'Silveira', 'weight': 7.5}, {'name' : 'Felipe Rangel', 'weight' : 85.3}))#*com varios dicionarios
 connection.commit()
 
+#?DELETE
+cursor.execute(
+    f'DELETE FROM {TABLE_NAME} WHERE id = "2"'
+)
+connection.commit()
+
+#?UPDATE
+cursor. execute(
+    f'UPDATE {TABLE_NAME} SET name = "Natannn" WHERE id = "1"'
+)
+connection.commit()
 
 cursor.close()
 connection.close()

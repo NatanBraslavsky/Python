@@ -20,18 +20,22 @@ cursor.execute(
 )
 connection.commit()
 
-cursor.execute(
-    f'DELETE FROM {TABLE_NAME}'
-)
-cursor.execute(
-    f'DELETE FROM sqlite_sequence WHERE name="{TABLE_NAME}"'
-)
-connection.commit()
+
+##delete sem where
+
+# cursor.execute(
+#     f'DELETE FROM {TABLE_NAME}'
+# )
+# cursor.execute(
+#     f'DELETE FROM sqlite_sequence WHERE name="{TABLE_NAME}"'
+# )
+# connection.commit()
 
 #Registrar valores nas colunas da tabela
-cursor.execute(
-    f'INSERT INTO {TABLE_NAME} (id, name, weight) VALUES (NULL, "Luiz Otávio", 9.9), (NULL, "Natan", 5.9)'
+sql = (
+    f'INSERT INTO {TABLE_NAME} (name, weight) VALUES (?, ?)'
 )
+cursor.execute(sql, ['Joana', 4])
 connection.commit()
 
 

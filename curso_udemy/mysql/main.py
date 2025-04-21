@@ -13,8 +13,6 @@ connection = pymysql.connect(
     database=os.environ['MYSQL_DATABASE'],
 )
 
-print(os.environ['MYSQL_HOST'])
-
 with connection:
     with connection.cursor() as cursor:
         cursor.execute(
@@ -25,13 +23,18 @@ with connection:
             'PRIMARY KEY (id)'
             ') '
         )
+        #ISSO LIMPA A TABELA
+        cursor.execute(f'TRUNCATE TABLE {TABLE_NAME}')
         
         connection.commit()
 
         with connection.cursor() as cursor:
-            result = cursor.execute(
-                f'INSERT INTO {TABLE_NAME} (nome, idade) VALUES ("Luiz", 25)'
+            sql = (
+                f'INSERT INTO {TABLE_NAME} (nome, idade) VALUES (%s, %s)'
             )
+            data = ('Luiz', 18)
+            result = cursor.execute(sql, data)
+            print(sql, data)
             print(result)
         connection.commit()
 

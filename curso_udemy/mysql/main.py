@@ -87,3 +87,20 @@ with connection:
             data5 = cursor.fetchall()
             for row in data5:
                 print(row)
+        
+        #!DELETE
+        # with connection.cursor() as cursor:
+        #     sql = (
+        #         f'DELETE FROM {TABLE_NAME}'
+        #     )
+        #     cursor.execute(sql)
+        #     connection.commit()
+
+        with connection.cursor() as cursor:
+         sql = (
+             f'UPDATE {TABLE_NAME} '
+             'SET nome=%s, idade=%s '
+             'WHERE id=%s'
+         )
+         cursor.execute(sql, ('Eleonor', 102, 4))
+         connection.commit()

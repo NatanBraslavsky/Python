@@ -51,3 +51,39 @@ with connection:
             # print(result)
         connection.commit()
 
+        with connection.cursor() as cursor:
+            sql = (
+                f'INSERT INTO {TABLE_NAME} (nome, idade) VALUES (%(name)s, %(age)s)'
+            )
+            data2 = (
+                {"name": "Sah","age": 33, },
+                {"name": "Júlia","age": 74, },
+                {"name": "Rose","age": 53, },
+            )
+            result = cursor.executemany(sql, data2)
+            # print(sql, data)
+            # print(result)
+        connection.commit()
+
+        with connection.cursor() as cursor:
+            sql = (
+                f'INSERT INTO {TABLE_NAME} (nome, idade) VALUES (%s, %s)'
+            )
+            data2 = (
+                ("Na", 20),
+                ("Vi", 39),
+            )
+            result = cursor.executemany(sql, data2)
+            # print(sql, data)
+            # print(result)
+        connection.commit()
+
+        with connection.cursor() as cursor:
+            sql = (
+                f'SELECT * FROM {TABLE_NAME} WHERE id > 3'
+            )
+            cursor.execute(sql)
+
+            data5 = cursor.fetchall()
+            for row in data5:
+                print(row)

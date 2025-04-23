@@ -1,0 +1,8 @@
+iniciar projeto:
+    django-admin startproject meuProjeto .
+
+executar projeto:
+    python manage.py runserver
+
+criar app:
+    django-admin startapp meuapp

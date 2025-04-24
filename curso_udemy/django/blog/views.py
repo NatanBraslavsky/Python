@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from blog.data import posts
 
 def exemplo(request):
 
     context = {
         'text': 'Olá exemplo.'
+        
     }
 
     print('exemplo')
@@ -12,7 +14,7 @@ def exemplo(request):
 def blog(request):
 
     context = {
-        'text': 'Olá blog'
+        'posts': posts
     }
 
     print('blog')

@@ -1,87 +1,110 @@
 from mysql import connector
+import mysql
 
-connection = connector.connect(
-    host='localhost',
-    user='root',
-    passwd='',
-    database = 'aula06'
+conexao = mysql.connector.connect(
+    host = 'localhost',
+    user = 'root',
+    passwd = '',
+    database = 'aula8'
 )
 
-cursor = connection.cursor()
+x = conexao.cursor()
 
-#criando a base de dados
+#criando a base de dados ------------------------------
 
-cursor.execute('CREATE database if NOT EXISTS aula8')
+#x.execute('create database if not exists aula8')
 
+#mostrar todas as bases de dados ---------------------
 '''
-cursor.execute('show databases')
-for i in cursor:
+x.execute('show databases')
+for i in x:
     print(i)
 
-cursor.execute('use aula8')
-'''
+#usando o banco de dados -------------------------------
 
-# cursor.execute('''CREATE TABLE aluno IF NOT EXISTS(
-#     matricula INT PRIMARY KEY AUTO_INCREMENT,
-#     nome VARCHAR(30) NOT NULL,
-#     idade INT(3),
-#     email VARCHAR(40))''')
+x.execute('use aula8')'''
 
-'''
-cursor.execute('show tables')
-for i in cursor:
+#criar tabela ------------------------------------------
+"""
+x.execute('''create table if not exists aluno(
+          matricula int primary key auto_increment,
+          nome varchar(30) not null,
+          idade int(3),
+          email varchar(40))''')
+
+#mostrar todas as tabelas -----------------------------
+
+x.execute('show tables')
+for i in x:
     print(i)
 
-cursor.execute('desc aluno')
-for i in cursor:
+#mostrar a descrição da tabela (desc ou describe)-------------------------
+
+x.execute('desc aluno')
+for i in x:
     print(i)
-'''
-'''
-sql = 'INSERT INTO aluno(nome,idade,email) VALUES("Thereza", 40, "therezaprofessora@gmail.com")'
 
-cursor.execute(sql)
-connection.commit()
-'''
+#inserir  dados na tabela - insert into nome da tabela (atributos) values(valores)
 
-'''
-valores = [
-    ('Amanda', 34, 'amanda@gmail.com'),
-    ('Bianca', 19, 'bianca@gmail.com'),
-    ('Davi', 21, 'davi@gmail.com'),
-    ('Felipe', 54, 'felipe@gmail.com'),
-    ('Gabriel', 65, 'gabriel@gmail.com'),
-    ('Toco', 74, 'toco@gmail.com'),
+y = "insert into aluno(nome,idade,email) values('Thereza',54,'teste@gmail.com')"
+x.execute(y)
+conexao.commit()
+print(x.rowcount,'Registro(s) inserido(s)')
+
+# ---------------------------------------------------------------------------
+
+v = [
+    ('José',54,'teste8@gmail.com'),
+    ('Tatiana',4,'teste1@gmail.com'),
+    ('Adriana',24,'teste2@gmail.com'),
+    ('Paulo',19,'teste3@gmail.com'),
+    ('Fabiano',85,'teste4@gmail.com'),
+    ('Talmo',49,'teste5@gmail.com'),
+    ('Maria',4,'teste6@gmail.com'),
+    ('Julia',10,'teste7@gmail.com'),
 ]
+x.executemany('insert into aluno(nome,idade,email) values(%s,%s,%s)',v)
+conexao.commit()
+print(x.rowcount,'Registro(s) inserido(s)')
 
-cursor.executemany('INSERT INTO aluno(nome,idade,email) VALUES(%s,%s,%s)',valores)
-connection.commit()
-print(cursor.rowcount,'Registro(s) inseridos')
-'''
+# seleção simples ------------------------------------------
 
-'''
-cursor.execute('SELECT * FROM aluno')
-result = cursor.fetchall()
+x.execute('Select * from aluno')
+r = x.fetchall()
 print('Dados do aluno: ')
-for i in result:
+for i in r:
     print(i)
-'''
-'''
-cursor.execute('SELECT nome,email FROM aluno')
-result = cursor.fetchone()
-print('Dados do aluno: ')
-for i in result:
-    print(i)
-'''
-'''
-cursor.execute('SELECT * FROM aluno WHERE idade > 15')
-result = cursor.fetchall()
-print('Dados do aluno: ')
-for i in result:
-    print(i)
-'''
 
-cursor.execute('SELECT * FROM aluno ORDER BY nome')
-result = cursor.fetchall()
+x.execute('Select nome,email from aluno')
+r = x.fetchall()
 print('Dados do aluno: ')
-for i in result:
+for i in r:
+    print(i)
+
+x.execute('Select nome,email from aluno')
+r = x.fetchone() #traz somente o primeiro dado da tabela
+print('Primeiro nome,email: ')
+for i in r:
+    print(i)
+
+#seleção condição - where  --------------------------------------
+
+x.execute('select nome from aluno where idade > 15')
+r = x.fetchall()
+print('Alunos maiores de 15 anos: ')
+for i in r:
+    print(i)
+
+#Ordenação asc/des - order by ------------------------------------"""
+
+x.execute('Select * from aluno order by nome ')
+r = x.fetchall()
+print('Dados do aluno ordenado (A-Z)')
+for i in r:
+    print(i)
+
+x.execute('Select nome from aluno where idade > 30 order by nome desc')
+r = x.fetchall()
+print('Dados do aluno ordenado (Z-A)')
+for i in r:
     print(i)

@@ -85,10 +85,19 @@
 #     else:
 #         print("Digite um valor válido.")
 
-x1 = []
-for i in range(5):
-    a = int(input("Digite um valor: "))
-    x1.append(a)
+# x1 = []
+# for i in range(5):
+#     a = int(input("Digite um valor: "))
+#     x1.append(a)
 
-b = set(x1)
-print(b)
+# b = set(x1)
+# print(b)
+
+
+soma = lambda x,y : x+y
+print(soma(5,3))
+
+
+def soma(x,y):
+    return x+y
+print(soma(5,3))

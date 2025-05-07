@@ -13,4 +13,4 @@ def binaria(lista, certo):
     return None
 
 lista = [1,3,5,7,9]
-print(binaria(lista,3))
+print(binaria(lista,1))

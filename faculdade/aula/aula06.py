@@ -1,28 +1,27 @@
-from mysql import connector
-import mysql
 
-conexao = mysql.connector.connect(
+from mysql import connector
+conexao = connector.connect(
     host = 'localhost',
     user = 'root',
     passwd = '',
-    database = 'aula8'
+    database = ''
 )
 
-x = conexao.cursor()
+cursor = conexao.cursor()
 
 #criando a base de dados ------------------------------
 
-#x.execute('create database if not exists aula8')
+# cursor.execute('create database if not exists aula8')
 
 #mostrar todas as bases de dados ---------------------
-'''
-x.execute('show databases')
-for i in x:
-    print(i)
 
+# cursor.execute('show databases')
+# for i in cursor:
+#     print(i)
+    
 #usando o banco de dados -------------------------------
 
-x.execute('use aula8')'''
+# x.execute('use aula8')
 
 #criar tabela ------------------------------------------
 """
@@ -97,14 +96,14 @@ for i in r:
 
 #Ordenação asc/des - order by ------------------------------------"""
 
-x.execute('Select * from aluno order by nome ')
-r = x.fetchall()
-print('Dados do aluno ordenado (A-Z)')
-for i in r:
-    print(i)
+# x.execute('Select * from aluno order by nome ')
+# r = x.fetchall()
+# print('Dados do aluno ordenado (A-Z)')
+# for i in r:
+#     print(i)
 
-x.execute('Select nome from aluno where idade > 30 order by nome desc')
-r = x.fetchall()
-print('Dados do aluno ordenado (Z-A)')
-for i in r:
-    print(i)
+# x.execute('Select nome from aluno where idade > 30 order by nome desc')
+# r = x.fetchall()
+# print('Dados do aluno ordenado (Z-A)')
+# for i in r:
+#     print(i)

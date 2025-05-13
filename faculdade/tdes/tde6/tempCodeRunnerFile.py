@@ -1,1 +1,0 @@
-cursor.execute('DELETE FROM aluno WHERE id >=')

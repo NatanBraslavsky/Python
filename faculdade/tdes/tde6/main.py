@@ -1,12 +1,12 @@
 import mysql.connector
-from tabulate import tabulate
+from tabulate import tabulate 
 #!pip install mysql-connector-python
 
 #?Iniciando a conexão
 connection = mysql.connector.connect(
     host='localhost',
     user = 'root',
-    passwd = 'NatanBras123@',
+    passwd = 'senha123@',
     database = ''
 )
 

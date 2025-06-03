@@ -1,24 +1,24 @@
 from mysql import connector
 import mysql
-from tkinter import*
+from tkinter import *
 import tkinter.messagebox as MessageBox
 
-con = mysql.connector.connect(
+con = connector.connect(
     host='localhost',
     user='root',
-    passwd='',
-    database='loja'
+    passwd='Senha123@',
+    database=''
 )
 
 c = con.cursor()
-#c.execute('create database loja')
-#c.execute('use loja')
+c.execute('create database if not exists loja')
+c.execute('use loja')
 
-# c.execute('''create table produto(
-#             codigo int primary key,
-#             nome varchar(20) not null,
-#             preco decimal(10,2) not null,
-#             quantidade int not null)''')
+c.execute('''create table if not exists produto (
+            codigo int primary key,
+            nome varchar(20) not null,
+            preco decimal(10,2) not null,
+            quantidade int not null)''')
 
 root = Tk()
 root.geometry('500x300')

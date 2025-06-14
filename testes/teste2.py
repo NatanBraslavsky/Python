@@ -18,3 +18,9 @@ num = [1,2,3,4,2,3,3,2,3,]
 num2 = set(num)
 print(num)
 print(num2)
+
+for i in num2:
+    if i == 2:
+        print("Num 2 aqui")
+    else:
+        print("nao")

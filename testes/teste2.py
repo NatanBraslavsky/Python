@@ -1,26 +1,35 @@
-# soma = lambda x,y : x+y
-# print(soma(5,3))
+from tkinter import *
 
+tk = Tk()
+tk.geometry('300x300')
+tk.title('prova')
 
-# def soma(x,y):
-#     return x+y
-# print(soma(5,3))
+def calcFahr():
+    try:
+        tempCel = float(temp_entry.get())
+        calc = (tempCel * 9 / 5) + 32
+        resp_label.config(text=round(calc))
+    except:
+        resp_label.config(text='erro.')
+    
+def calcKelv():
+    try:
+        tempCel = float(temp_entry.get())
+        calc = tempCel + 273.15
+        resp_label.config(text=round(calc))
+    except:
+        resp_label.config(text='erro.')
 
-# def isPar(num):
-#     if num % 2 == 0:
-#         return 'Par'
-#     return 'Ímpar'
+temp_entry = Entry(tk)
+temp_entry.pack()
 
-# print(isPar(2))
+btnfah = Button(tk,text='verificar', command=calcFahr)
+btnfah.pack()
 
+btnkel = Button(tk,text='verificar', command=calcKelv)
+btnkel.pack()
 
-num = [1,2,3,4,2,3,3,2,3,]
-num2 = set(num)
-print(num)
-print(num2)
+resp_label = Label(tk)
+resp_label.pack()
 
-for i in num2:
-    if i == 2:
-        print("Num 2 aqui")
-    else:
-        print("nao")
+tk.mainloop()

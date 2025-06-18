@@ -1,15 +1,11 @@
-def singleNumber(lista):
-    for i in lista:
-        if lista.count(i) == 1:
-            return i
-    return None
+from random import randint
 
-lista = [1,1,2,2,4,5]
-print(singleNumber(lista))
-
-dados = (3, 10.5, 'natan', True)
-print(f"1: {dados[1]}, 2: {dados[3]}")
-try:
-    dados[0] = dados[2]
-except:
-    print("Não é possivel modificar os valores de uma tupla.")
+def quicksort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivo = arr[0]
+        menor = [i for i in arr[1:] if i <= pivo]
+        maior = [i for i in arr[1:] if i > pivo]
+        return quicksort(menor) + [pivo] + quicksort(maior)
+print(quicksort([5,4,3,3,5,3,1]))

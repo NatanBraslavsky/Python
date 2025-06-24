@@ -30,7 +30,7 @@ def inserir():
     nome = e_nome.get()
     preco = e_preco.get()
     quantidade = e_quantidade.get()
-
+    
     if codigo == '' or nome == '' or preco == '' or quantidade == '':
         MessageBox.showerror('Inserir', 'Todos os campos são obrigatórios')
     else:

@@ -19,11 +19,11 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS aluno(
                 idade INT(3)
                )''')
 #?insert
-cursor.execute('''
-INSERT INTO aluno(nome, idade) VALUES(%s, %s)
-''', ('natan', 20))
+# cursor.execute('''
+# INSERT INTO aluno(nome, idade) VALUES(%s, %s)
+# ''', ('natan', 20))
 
-connection.commit()
+# connection.commit()
 
 #?select
 cursor.execute('SELECT * FROM aluno')
@@ -37,6 +37,11 @@ connection.commit()
 #?delete
 cursor.execute('DELETE FROM aluno WHERE id BETWEEN 1 and 6')
 connection.commit()
+
+cursor.execute('SELECT * FROM aluno WHERE idade >= 18')
+x = cursor.fetchall()
+for i in x:
+    print(i)
 
 cursor.close()
 connection.close()

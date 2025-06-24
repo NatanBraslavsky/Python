@@ -12,22 +12,31 @@ cursor = connection.cursor()
 cursor.execute('CREATE DATABASE IF NOT EXISTS teste')
 cursor.execute('USE teste')
 
-#criação
+#?criação
 cursor.execute('''CREATE TABLE IF NOT EXISTS aluno(
                 id INT PRIMARY KEY AUTO_INCREMENT,
                 nome VARCHAR(30),
                 idade INT(3)
                )''')
-
+#?insert
 cursor.execute('''
 INSERT INTO aluno(nome, idade) VALUES(%s, %s)
 ''', ('natan', 20))
 
 connection.commit()
 
-cursor.execute('SELECT id FROM aluno WHERE nome = "natan"')
+#?select
+cursor.execute('SELECT * FROM aluno')
 for i in cursor:
     print(i)
+
+#?update
+cursor.execute('UPDATE aluno SET nome="babi" WHERE id = 3')
+connection.commit()
+
+#?delete
+cursor.execute('DELETE FROM aluno WHERE id BETWEEN 1 and 6')
+connection.commit()
 
 cursor.close()
 connection.close()

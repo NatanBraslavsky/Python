@@ -1,3 +1,4 @@
+
 num = input("Digite um número: ")
 try:
     numero = int(num)

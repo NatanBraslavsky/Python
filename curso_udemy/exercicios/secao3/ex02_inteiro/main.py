@@ -8,3 +8,6 @@ try:
         print("Ímpar.")
 except:
     print("Isso não é um número inteiro.")
+
+if(len(num) < 3):
+    print("menor que 3")
